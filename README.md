@@ -1,6 +1,6 @@
 # After Sales Eagle Eye 🦅
 
-![Eagle Eye](https://w7.pngwing.com/pngs/379/971/png-transparent-eagle-eyes-face-bald-america-beak-sharp-head-bird-wildlife.png)
+![Eagle Eye](https://i0.wp.com/northmantrader.com/wp-content/uploads/2019/06/eagle-eye.png?fit=1154%2C524&ssl=1)
 
 Welcome to After Sales Eagle Eye! 🚀 This repository contains a powerful data transformation and analytics solution built using dbt (data build tool). With this dbt project, you can efficiently process and analyze sales data related to after sales requests. Keep your finger on the pulse of your after sales operations and gain valuable insights with ease.
 
