@@ -1,6 +1,6 @@
 # After Sales Eagle Eye 🦅
 
-![Eagle Eye](https://www.pngwing.com/en/search?q=eagle+Eye)
+![Eagle Eye](https://www.pngwing.com/en/free-png-zgdao)
 
 Welcome to After Sales Eagle Eye! 🚀 This repository contains a powerful data transformation and analytics solution built using dbt (data build tool). With this dbt project, you can efficiently process and analyze sales data related to after sales requests. Keep your finger on the pulse of your after sales operations and gain valuable insights with ease.
 
