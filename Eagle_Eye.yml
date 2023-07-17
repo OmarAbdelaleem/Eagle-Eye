@@ -1,0 +1,195 @@
+version: 2
+
+models:
+  - name: after_sales_eagle_eye
+    description: This table contains all the detailed data related to the after sales requests
+    columns:
+      - name: order_id
+        description: The unique identifier of each order
+        tests:
+          - dbt_expectations.expect_column_to_exist
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: VARCHAR
+          - dbt_expectations.expect_column_values_to_not_be_null
+
+      - name: sales_rep_id
+        description: The ID of the sales representative
+        tests:
+          - dbt_expectations.expect_column_to_exist
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: VARCHAR
+          - dbt_expectations.expect_column_values_to_not_be_null
+
+      - name: order_status
+        description: Current status of the order
+        tests:
+          - dbt_expectations.expect_column_to_exist
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: VARCHAR
+          - dbt_expectations.expect_column_values_to_not_be_null
+
+      - name: order_creation_date
+        description: Date for order creation on our website
+        tests:
+          - dbt_expectations.expect_column_to_exist
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: DATE
+          - dbt_expectations.expect_column_values_to_not_be_null
+
+      - name: order_delivery_date
+        description: Date for order delivery
+        tests:
+          - dbt_expectations.expect_column_to_exist
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: TIMESTAMP_NTZ
+          - dbt_expectations.expect_column_values_to_not_be_null
+
+      - name: country
+        description: The selected Country that the merchant placed this order for
+        tests:
+          - dbt_expectations.expect_column_to_exist
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: VARCHAR
+          - dbt_expectations.expect_column_values_to_not_be_null
+
+      - name: request_date
+        description: Date for after_sales request_creation
+        tests:
+          - dbt_expectations.expect_column_to_exist
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: TIMESTAMP_NTZ
+          - dbt_expectations.expect_column_values_to_not_be_null
+
+      - name: request_to_closed_sla
+        description: Time taken to close the after_sale request
+        tests:
+          - dbt_expectations.expect_column_to_exist
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: NUMBER
+
+      - name: customer_number
+        description: Anonymized phone number for the customer
+        tests:
+          - dbt_expectations.expect_column_to_exist
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: VARCHAR
+
+      - name: closed_at
+        description: Date of the final status for the after_sale request
+        tests:
+          - dbt_expectations.expect_column_to_exist
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: DATE
+
+      - name: request_id
+        description: after_sale request_id
+        tests:
+          - dbt_expectations.expect_column_to_exist
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: VARCHAR
+          - dbt_expectations.expect_column_values_to_not_be_null
+
+      - name: product_id
+        description: The ID for the after_sale request product
+        tests:
+          - dbt_expectations.expect_column_to_exist
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: VARCHAR
+          - dbt_expectations.expect_column_values_to_not_be_null
+
+      - name: product_name
+        description: The name for the after_sale request product
+        tests:
+          - dbt_expectations.expect_column_to_exist
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: VARCHAR
+          - dbt_expectations.expect_column_values_to_not_be_null
+
+      - name: req_type
+        description: After_sale request type
+        tests:
+          - dbt_expectations.expect_column_to_exist
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: VARCHAR
+          - dbt_expectations.expect_column_values_to_not_be_null
+
+      - name: reason
+        description: The reason behind the after_sale request
+        tests:
+          - dbt_expectations.expect_column_to_exist
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: VARCHAR
+
+      - name: quantity
+        description: Number of pieces of the product included in the after_sale request
+        tests:
+          - dbt_expectations.expect_column_to_exist
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: NUMBER
+          - dbt_expectations.expect_column_values_to_not_be_null
+
+      - name: req_status
+        description: After_sale request status
+        tests:
+          - dbt_expectations.expect_column_to_exist
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: VARCHAR
+          - dbt_expectations.expect_column_values_to_not_be_null
+
+      - name: orderlines_status
+        description: Order status for the product included in the after_sale request
+        tests:
+          - dbt_expectations.expect_column_to_exist
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: VARCHAR
+          - dbt_expectations.expect_column_values_to_not_be_null
+
+      - name: aftersale_awb
+        description: After sale Air Waybill according to shipping companies
+        tests:
+          - dbt_expectations.expect_column_to_exist
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: VARCHAR
+
+      - name: customer_name
+        description: Name of the Customer who submitted the after_sale request
+        tests:
+          - dbt_expectations.expect_column_to_exist
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: VARCHAR
+          - dbt_expectations.expect_column_values_to_not_be_null
+
+      - name: bank_name
+        description: Name of the bank for the customer
+        tests:
+          - dbt_expectations.expect_column_to_exist
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: VARCHAR
+
+      - name: iban
+        description: IBAN number for the customer's bank account
+        tests:
+          - dbt_expectations.expect_column_to_exist
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: VARCHAR
+
+      - name: cost
+        description: Money transferred to customer's bank account
+        tests:
+          - dbt_expectations.expect_column_to_exist
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: VARCHAR
+
+      - name: customer_bank_name
+        description: Name of the customer as it is in the Bank
+        tests:
+          - dbt_expectations.expect_column_to_exist
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: VARCHAR
+
+      - name: summary
+        description: Summary of the after_sale request as the customer informed us
+        tests:
+          - dbt_expectations.expect_column_to_exist
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: VARCHAR
