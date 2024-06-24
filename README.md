@@ -13,6 +13,7 @@ Welcome to After Sales Eagle Eye! 🚀 This repository contains a powerful data 
 - [Data Privacy](#data-privacy)
 - [Additional dbt Commands](#additional-dbt-commands)
 - [Contributing](#contributing)
+  
 
 ## Introduction
 
@@ -105,6 +106,27 @@ When you're done with your analysis, clean up the temporary artifacts:
 ```bash
 dbt clean
 ```
+### Purpose:
+The given SQL code is used to extract and transform data related to after-sales requests from an orders source table in a MongoDB, and prepare it for analysis by materializing it into a table named After_Sales_Eagle_Eye within the sales_data schema.
+
+### Parameters:
+schema: The schema where the resulting table will be stored. In this case, it's sales_data.
+alias: The alias name for the resulting table, which is After_Sales_Eagle_Eye.
+materialized: Specifies that the output should be a materialized table.
+tags: Tags for categorizing the table, here it's tagged as internal.
+
+### Functionality:
+#### Base Extraction:
+
+This Common Table Expression (CTE) base_extraction extracts necessary fields from the orders_src table.
+It flattens the nested JSON structure for afterSalesRequests, requestedLines, orderLines, and events.
+It anonymizes customer numbers and calculates various dates and SLA metrics.
+It ensures only the latest relevant records are kept using window functions and row numbering.
+Final Selection:
+
+The main query selects the required fields from base_extraction.
+It handles null values and provides default values for specific fields.
+It ensures uniqueness by qualifying the rows based on the most recent update date.
 
 ## Contributing
 
